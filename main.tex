@@ -1,0 +1,137 @@
+% Enable this if you want usenix template
+%\usepackage{usenix2019_v3}
+
+\documentclass[sigplan,10pt]{acmart}
+
+\settopmatter{printacmref=false, printccs=false, printfolios=false}
+\renewcommand\footnotetextcopyrightpermission[1]{}
+\pagestyle{plain}
+
+
+% ENABLE This if you want times for ACM template
+% \usepackage{times}
+
+\usepackage[normalem]{ulem}
+\usepackage{enumitem}
+% to be able to draw some self-contained figs
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{listings}
+\usepackage{epsfig,endnotes}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{xspace}
+\usepackage{array}
+\usepackage{balance}
+\usepackage{caption}
+\usepackage{glossaries}
+\usepackage[noend]{algpseudocode}
+%\usepackage{algorithm}
+%\usepackage{algorithmicx}
+%\usepackage[ruled,vlined, noend]{algorithm2e}
+\usepackage[noend,ruled,vlined]{algorithm2e}
+\newcommand\mycommfont[1]{\footnotesize\ttfamily\textcolor{blue}{#1}}
+\SetCommentSty{mycommfont}
+
+\usepackage{varwidth}
+%\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+
+
+\usepackage{url}
+\def\UrlBreaks{\do\/\do-}
+\makeatletter
+\g@addto@macro{\UrlBreaks}{\UrlOrds}
+\g@addto@macro{\UrlBreaks}{%
+	\do\/\do\d%
+}
+\usepackage{breakurl}
+
+% for code
+\lstset{
+	basicstyle=\ttfamily,
+	literate={~}{{\fontfamily{ptm}\selectfont \textasciitilde}}1
+}
+
+% for column color 
+\newcommand{\mc}[2]{\multicolumn{#1}{c}{#2}}
+\definecolor{Gray}{gray}{0.85}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+
+\newcolumntype{a}{>{\columncolor{Gray}}r}
+\newcolumntype{b}{>{\columncolor{white}}r}
+
+%
+
+\input{annotation} %---- annotations!
+
+
+\definecolor{Gray}{gray}{0.85}
+\newcommand{\fixme}[1]{{\color{red} #1}}
+\newcommand{\todo}[1]{{\color{blue} #1}}
+%\newcommand{\reyy}[1]{{\color{blue!60} #1}}
+\newcommand{\todoc}[2]{{\textcolor{#1} {#2}}}
+\newcommand{\todoorange}[1]{\todoc{orange!60}  {[#1]}}
+\newcommand{\todoviolet}[1]{\todoc{violet!60}{}}
+\newcommand{\todored}[1]{\todoc{red!60}{}}
+\newcommand{\bingyu}[1]{\todoorange{BY: #1}}
+\newcommand{\tianyi}[1]{\todoviolet{TY: #1}}
+\newcommand{\yy}[1]{\todored{YY: #1}}
+\newcommand{\commentyy}[1]{}
+\newcommand{\commentbingyu}[1]{}
+\newcommand{\commentty}[1]{}
+
+
+%%%%%%%%%% constants!!!- need to be consistent
+\newcommand{\numsubmitted}{91}
+\newcommand{\numaccepted}{62}
+\newcommand{\numconfirmed}{2}
+
+\usepackage[T1]{fontenc}
+\usepackage[scaled=.75]{beramono}
+\usepackage{fancyvrb}
+
+
+
+\usepackage{titlesec}
+
+%-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+
+\begin{document}
+\date{}
+
+\title{A great paper}
+
+\input{abstract}
+
+\maketitle
+
+%-------------------------------------------------------------------------------
+\input{intro}
+\input{observations}
+%\input{threat}
+\input{design}
+\input{eval}
+\input{related}
+\input{limitation}
+\input{conclusion}
+
+\bibliographystyle{plain}
+\bibliography{refer}
+
+
+%\newpage
+\input{appendix}
+%-------------------------------------------------------------------------------
+
+\end{document}

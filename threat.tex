@@ -1,0 +1,23 @@
+\section{Threat model}
+\label{sec:threat}
+
+\ace targets on reducing the possible attacks that aim to steal data by
+exploiting the over-privileged access introduced by a sysadmin mistakenly 
+over-grant the privilege to users or the permissions of resources, e.g., 
+sysadmins give a database user higher level of privilege and the user 
+(attacker) can view or modify the database which should not be accessed.
+A number of recent studies 
+\cite{bauer2009real,bauer2011detecting,Schneier2009,sinclair2010s,xu2017system}
+have shown that such misconfigurations in the access control are prevalent and 
+can cause severe consequences.
+
+
+\ace aims to reduce the over-privileged resolutions introduced by the 
+sysadmins in solving the common access-deny issues, by providing more 
+critical information in the log messages for the sysadmins. First, \ace assumes 
+that the sysadmins are the benign party. Second, \ace assumes that the error 
+logs should be enabled by the system settings and accessible to sysadmins. This 
+assumption is reasonable since the error logs record most critical information 
+and usually enabled in the default settings. Third, \ace assumes the integrity 
+of the error logs is guaranteed by the systems and will not be modified by 
+malware or attackers.
